@@ -1,0 +1,122 @@
+body{
+    /* margin-left: 40px;
+    margin-right: 40px; */
+    min-width: 400px;
+    font-family: "Segoe UI"; 
+    user-select: none;
+}
+
+#header-name{
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* Optional: to avoid transparency when scrolling */
+    z-index: 1000; /* Ensures it stays above other elements */
+    text-align: center;
+    padding: 10px 0;
+    transition: all 0.5s ease; /* Smooth transition */
+}
+
+#my-name{
+    font-weight: bold;
+    font-size: 42px;
+}
+
+#my-job{
+    font-size: 42px;
+}
+
+h1{
+    font-size: 34px;
+}
+
+/* Container for overall content */
+#content{
+    
+    /* justify-content: center;
+    align-items: center; */
+    min-height: 60vh;
+    margin: 40px;
+}
+
+/* Container for PROJECTS content */
+/* #project, #education{
+    width: 100%;
+    max-width: 900px;
+    text-align: left; 
+    
+} */
+#content{
+    margin-top: 200px;
+}
+@media (max-width: 600px) { 
+    /* #project, #education, #experience{
+
+        text-align: left;
+    } */
+    #content{
+        /* justify-content: left;
+        align-items: left; */
+        text-align: center;
+        
+        margin: 10px;
+    }
+}
+
+@media (min-width: 801px) {
+    /* #project, #education, #experience{
+        
+        text-align: center;
+    } */
+    #content{
+        /* justify-content: center;
+        align-items: center; */
+        /* text-align: left; */
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+    
+}
+
+.title{
+    /* font-size: 15px; */
+    font-size: 200%;
+}
+
+.date{
+    /* font-size: 11px; */
+    font-size: 95%;
+}
+
+.description{
+    /* font-size: 11px; */
+    font-size: 95%;
+}
+
+img{
+    width: 100%;
+    max-width: 900px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    will-change: opacity, transform;
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out forwards;
+}
