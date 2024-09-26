@@ -50,6 +50,7 @@ h1{
 } */
 #content{
     margin-top: 200px;
+    
 }
 @media (max-width: 600px) { 
     /* #project, #education, #experience{
@@ -119,4 +120,15 @@ img{
 
 .fade-in {
     animation: fadeIn 2s ease-in-out forwards;
+}
+
+.job-title {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    color: #5b6d93;
+}
+
+.job-title.visible {
+    opacity: 1;
 }
