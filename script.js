@@ -1,3 +1,8 @@
+const jobTitles = ["Software Developer", "Machine Learning Engineer", "Web Developer", "Mobile App Developer", "Full-Stack Developer", "Front-End Developer", "Back-End Developer"
+    , "Database Administrator", "Data Scientist", "Data Analyst", "Data Engineer",
+    "AI Engineer", "NLP Engineer", "IT Project Manager", "Technical Support Specialist"];
+let currentTitleIndex = 0;
+
 window.onscroll = function() {shrinkHeader()};
 
 function shrinkHeader() {
@@ -26,13 +31,30 @@ document.addEventListener("DOMContentLoaded", function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target); // Optional: Stop observing after animation
+                observer.unobserve(entry.target);
             }
         });
     });
-
-    // Observe each 'section' class element
     sections.forEach(section => {
         observer.observe(section);
     });
+});
+
+
+
+function changeTitle() {
+    const jobTitleElement = document.querySelector('.job-title');
+    jobTitleElement.classList.remove('visible'); 
+
+    setTimeout(() => {
+        currentTitleIndex = (currentTitleIndex + 1) % jobTitles.length;
+        jobTitleElement.textContent = jobTitles[currentTitleIndex];
+        jobTitleElement.classList.add('visible');
+    }, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const jobTitleElement = document.querySelector('.job-title');
+    jobTitleElement.classList.add('visible');
+    setInterval(changeTitle, 3000); 
 });
